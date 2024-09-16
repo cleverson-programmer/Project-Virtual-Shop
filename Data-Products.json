@@ -1,0 +1,760 @@
+{
+    "products":[
+        {
+          "id": 1,
+          "name": "Calabresa Premium",
+          "description": "Molho, Mussarela, Calabresa, Orégano e Catupiry.",
+          "size": [
+            {
+              "slice": 6,
+              "price": 58
+            },
+            {
+              "slice": 8,
+              "price": 69
+            },
+            {
+              "slice": 10,
+              "price": 78
+            },
+            {
+              "slice": 12,
+              "price": 89
+            }
+          ],
+          "urlImage": "https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/calabresa%20premium.avif?alt=media&token=28cc595f-7178-4012-bb5b-daed5eb086cb"
+        },
+        {
+            "id": 2,
+            "name": "Mexicano",
+            "description": "Molho, mussarela, bacon, cheddar, Doritos e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/mexicano.avif?alt=media&token=357c268c-7b57-4f9f-bd8b-25b7a8987ae5"
+            },
+          {
+            "id": 3,
+            "name": "Portuguesa",
+            "description": "Molho, mussarela, presunto, bacon, palmito, ervilha, milho, ovos e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/portuguesa.avif?alt=media&token=4a0843fc-636b-4ce8-98cd-e52d35d1776a"
+          },
+          {
+            "id":4,
+            "name": "Americana",
+            "description": "Molho, mussarela, lombo canadense, bacon, milho e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Americana.avif?alt=media&token=b0017e12-bbcf-43b1-9ac3-05d33632bcce"
+          },
+          {
+            "id":5,
+            "name": "Atum",
+            "description": "Molho, mussarela, atum e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Atum.avif?alt=media&token=452533cb-bc9b-4998-b0f4-334a327e7fc9"
+          },
+          {
+            "id":6,
+            "name": "Atum Especial",
+            "description": "Molho, mussarela, atum coberto por mussarela, Catupiry e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Atum%20Especial.avif?alt=media&token=a8071e32-d7fa-4ee9-943d-5200fc1350dd"
+          },
+          {
+            "id":7,
+            "name": "Brasileira",
+            "description": "Molho, mussarela, presunto, milho, bacon, ovos e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Brasileira.avif?alt=media&token=11ec4f45-029a-44ec-9a8a-5b5211b1f870"
+          },
+          {
+            "id":8,
+            "name": "Caipira",
+            "description": "Molho, mussarela, frango, milho, Catupiry e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Caipira.avif?alt=media&token=86129060-c5eb-47f1-aeb7-f4d7a5037c1d"
+          },
+          {
+            "id":9,
+            "name": "Calabresa",
+            "description": "Molho, mussarela, calabresa e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Calabresa.avif?alt=media&token=9aa41d44-3cd6-4869-8127-5725b6414038"
+          },
+          {
+            "id":10,
+            "name": "Carijó",
+            "description": "Molho, mussarela, frango, milho, tomate, ovos e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Carijo.avif?alt=media&token=ae1eda01-fecd-49fe-a8e8-0f47546fd584"
+          },
+          {
+            "id":11,
+            "name": "Carnívora",
+            "description": "Molho, mussarela, presunto, bacon, calabresa, lombo canadense, frango, palmito e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Carnivora.avif?alt=media&token=9a71f939-95fe-4e0b-9560-e5bd318a24e0"
+          },
+          {
+            "id":12,
+            "name": "Cinco Queijos",
+            "description": "Molho, mussarela, provolone, parmesão, Catupiry e gorgonzola e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Cinco-queijos.avif?alt=media&token=4e8664d7-d839-49a0-ab3a-fcb6def112af"
+          },
+          {
+            "id":13,
+            "name": "Do Chefe",
+            "description": "Molho, mussarela, presunto, palmito, ovos, ervilha, champignon, catupity e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Do-Chefe.avif?alt=media&token=f6cf9ca1-22c4-4ff0-971b-95c5979e182e"
+          },
+          {
+            "id":14,
+            "name": "Do Pizzaiolo",
+            "description": "Molho, mussarela, palmito, bacon, ovos, Catupiry e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Do-Pizzaiolo.avif?alt=media&token=f70ff63b-a7dd-4f75-9141-b9620a0eb73f"
+          },
+          {
+            "id":15,
+            "name": "Espanhola",
+            "description": "Molho, mussarela, atum, tomate picado, Catupiry e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Espanhola.avif?alt=media&token=7db4cd2b-a5fd-43ca-ac74-a46942bff572"
+          },
+          {
+            "id":16,
+            "name": "Florença",
+            "description": "Molho, mussarela, atum, ovos, champignon, bacon e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Floren%C3%A7a.avif?alt=media&token=e298bbc1-5bab-43bb-872f-2a6bc2e6a92e"
+          },
+          {
+            "id":17,
+            "name": "Francesa",
+            "description": "Molho, mussarela, lombo canadense, ervilha, palmito, Catupiry e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Francesa.avif?alt=media&token=684c25b1-3aba-4b08-ae21-f01872a12ef3"
+          },
+          {
+            "id":18,
+            "name": "Frango com Catupiry",
+            "description": "Molho, mussarela, frango, Catupiry e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Frango%20com%20Catupiry.avif?alt=media&token=8ffde4f7-8451-44bd-8632-6dc1776f42c7"
+          },
+          {
+            "id":19,
+            "name": "Lombacon",
+            "description": "Molho, mussarela, lombo canadense, bacon, palmito, milho e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Lombacon.avif?alt=media&token=34eb3613-8ee0-4a1a-9a70-3bf6bb3a3a3d"
+          },
+          {
+            "id":20,
+            "name": "Lombo Canadense com Catupiry",
+            "description": "Molho, mussarela, lombo canadense, Catupiry e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Lombo%20canadense%20com%20Catupiry.avif?alt=media&token=f83ceca0-32ac-44f0-ae00-762fd9186875"
+          },
+          {
+            "id":21,
+            "name": "Marguerita",
+            "description": "Molho, mussarela, tomate, manjericão e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Marguerita.avif?alt=media&token=83702800-95f9-4fdd-90de-d4d2034f1239"
+          },
+          {
+            "id":22,
+            "name": "Mineira",
+            "description": "Molho, mussarela, frango, bacon, milho e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Mineiro.avif?alt=media&token=f798e09d-3e21-4676-a7ce-e418391421c7"
+          },
+          {
+            "id":23,
+            "name": "Moda da Casa",
+            "description": "Molho, mussarela, frango, presunto, milho, palmito, calabresa, bacon, tomate e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Moda%20da%20Casa.avif?alt=media&token=a01b5537-8f63-46bd-b8f7-705287350176"
+          },
+          {
+            "id":24,
+            "name": "Napolitano",
+            "description": "Molho, mussarela, presunto, tomate e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Napolitano.avif?alt=media&token=7674c6a6-10e2-40f8-bf98-e0fadd627d8c"
+          },
+          {
+            "id":25,
+            "name": "Pepperoni",
+            "description": "Molho, mussarela, pepperoni e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Pepperoni.avif?alt=media&token=1b850683-6302-4e87-a27a-ef1386dd4794"
+          },
+          {
+            "id":26,
+            "name": "Quatro Queijos",
+            "description": "Molho, mussarela, provolone, parmesão, Catupiry e orégano.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Quatro%20queijos.avif?alt=media&token=945624f9-6c1f-4b26-a722-260321f82334"
+          },
+          {
+            "id":27,
+            "name": "Banana",
+            "description": "Molho, mussarela, banana, leite condensado e canela.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/pizza-banana.jpeg?alt=media&token=4d4fdff4-713c-4a4f-a060-242a862f627f"
+          },
+          {
+            "id":28,
+            "name": "Nutella com Morango",
+            "description": "Molho, mussarela, creme de avelã e morango.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/pizza-nutellla-morango.jpg?alt=media&token=d334af01-1db9-4ebd-bfe6-8ab4a331d9b8"
+          },
+          {
+            "id":29,
+            "name": "Romeu E Julieta",
+            "description": "Molho, mussarela e goiabada.",
+            "size": [
+              {
+                "slice": 6,
+                "price": 58
+              },
+              {
+                "slice": 8,
+                "price": 69
+              },
+              {
+                "slice": 10,
+                "price": 78
+              },
+              {
+                "slice": 12,
+                "price": 89
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/pizza-romeu-julieta.avif?alt=media&token=0df9cef4-99a4-49a6-9f1d-5ea891961958"
+          },
+          {
+            "id":30,
+            "name": "Coca-Cola Original 2L",
+            "description": "Garrafa 2L (gelada)",
+            "size": [
+              {
+                "slice": 2,
+                "price": 14
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/coca-cola2L.avif?alt=media&token=62f07802-9209-45dd-a7c0-ed14835122db"
+          },
+          {
+            "id":31,
+            "name": "Refrigerante Zero Açúcar Coca Cola 1,5l",
+            "description": "Garrafa 1,5L (gelada)",
+            "size": [
+              {
+                "slice": 1.5,
+                "price": 13
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/coca-zero15L.avif?alt=media&token=8b06ef9a-5e3f-4385-96c3-c7e246481bd0"
+          },
+          {
+            "id":32,
+            "name": "Refrigerante Guaraná Antárctica 2 L",
+            "description": "Garrafa 2L (gelada)",
+            "size": [
+              {
+                "slice": 2,
+                "price": 13
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Guarana2l.avif?alt=media&token=e81cd60f-b842-4e18-a795-7f4e6485aca4"
+          },
+          {
+            "id":33,
+            "name": "Suco Del Valle Uva 1l",
+            "description": "Caixa 1L (gelada)",
+            "size": [
+              {
+                "slice": 1,
+                "price": 10
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Dell%20Vale%20Uva.avif?alt=media&token=fed4ac61-e61a-4f0c-bbee-8001ed82e719"
+          },
+          {
+            "id":34,
+            "name": "Suco Dell Vale Mais Laranja 1l",
+            "description": "Caixa 1L (gelada)",
+            "size": [
+              {
+                "slice": 1,
+                "price": 10
+              }
+            ],
+            "urlImage":"https://firebasestorage.googleapis.com/v0/b/bdshoppizzaria.appspot.com/o/Dell%20Vale%20Laranja.avif?alt=media&token=16a79e52-4b49-4aa3-9d10-60084f265315"
+          }
+        ]
+}

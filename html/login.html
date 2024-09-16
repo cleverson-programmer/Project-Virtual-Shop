@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!--Tailwindcss-->
+    <link rel="stylesheet" href="../css/output.css">
+    <!--CSS-->
+  <script type="module" src="../js/login.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+
+  <main class="bg-custom-yellow flex flex-col items-center justify-center h-screen">
+
+    <!--Loading-->
+    <div id="loading" class="absolute inset-0 hidden justify-center items-center">
+      <img src="../assets/loading.gif" alt="Loading gif">
+    </div>
+
+
+    <div id="containerLogin" class= " bg-custom-black w-10/12 h-fit rounded-md text-white p-4">
+
+      <!--Logotype Pizzaria-->
+      <div class="flex justify-center mt-3 mb-3">
+        <img src="../assets/logotype1.jpg" class=" w-16 h-16 rounded-full" alt="Logo Nossa Pizza">
+      </div>
+      <div class="flex justify-center mb-3">
+        <h3 id="authFormTitle" class="text-white text-2xl ">Entrar</h3>
+      </div>
+  
+        <!--Unauthenticated users-->
+        <!--Form user unauthenticated-->
+        <form id="authForm" class="flex flex-col text-white  text-xl mb-3">
+
+          <label for="email" class="mb-2 mt-2">E-mail: </label>
+          <input type="email" class="rounded-md placeholder:pl-3 text-black h-10"  placeholder="E-mail" id="email" required>
+  
+          <label for="password" class="mb-2 mt-2">Senha: </label>
+          <input type="password" class="rounded-md placeholder:pl-3 text-black h-10" placeholder="Senha" id="password" required>
+  
+          <button type="submit" class="mt-3 bg-green-500 p-3 rounded-md hover:bg-green-600 transition" id="submit">Entrar</button>
+        </form>
+
+        <!--Unauthenticated users google-->
+        <div class="flex justify-center items-center text-4xl">
+          <i class="fa-brands fa-google p-4 hover:cursor-pointer"></i>
+          <i class="fa-brands fa-facebook p-4 hover:cursor-pointer"></i>
+        </div>
+  
+        <!--switch from registration to login-->
+        <div class="flex flex-col justify-center items-center text-xl">
+          <button id="forgotPassword">Esqueceu a senha?</button>
+          <p id="register">
+            Não possui conta?
+          </p>
+          <button id="btnCreateAccount" class="bg-green-500 mt-4 p-3 rounded-md hover:bg-green-600 transition">Criar conta</button>
+        </div>
+    </div>
+  </main>
+</body>
+</html>
