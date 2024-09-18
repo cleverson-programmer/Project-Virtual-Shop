@@ -1,4 +1,7 @@
-const iconUser = document.getElementById("user-cart");
+const userIcon = document.getElementById("user-icon");
+const containerAccount = document.getElementById("containerAccount")
+const closeAccount = document.getElementById('close-account')
+
 const menuCart = document.querySelector("#buy-cart")
 const sendOrderWhatsapp = document.querySelector("#btn-send-whatsapp")
 const showCartBottom = document.querySelector("#show-cart")
@@ -28,3 +31,15 @@ closeCartContainer.addEventListener('click', () => {
     menuCart.classList.add('hidden')
 })
 
+
+// View page account
+
+userIcon.addEventListener('click', ()=>{
+    containerAccount.classList.remove('hidden')
+    containerAccount.classList.add('flex')
+})
+
+closeAccount.addEventListener('click', () =>{
+    containerAccount.classList.remove('flex')
+    containerAccount.classList.add('hidden')
+})

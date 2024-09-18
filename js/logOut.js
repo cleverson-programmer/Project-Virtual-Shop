@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
 
 import { getAuth, signOut }  from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
 
@@ -14,14 +14,14 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApps()[0];
 const auth = getAuth(app)
 
 //Logout user account
 function logOut() {
     signOut(auth).then(() => {
         alert('Saindo da conta');
-        window.location.href = 'login.html';
+        window.location.href = 'login.html'
     }).catch((error) => {
         console.error('Erro ao sair da conta:', error);
     });
@@ -32,5 +32,4 @@ const btnUser = document.getElementById('btn-user')
 btnUser.addEventListener('click', function(){
     console.log('sucess')
     logOut()
-    
 })

@@ -628,6 +628,10 @@ video {
   z-index: 10;
 }
 
+.z-20 {
+  z-index: 20;
+}
+
 .z-\[99\] {
   z-index: 99;
 }
@@ -671,6 +675,10 @@ video {
 
 .mr-3 {
   margin-right: 0.75rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
 }
 
 .mt-2 {
@@ -748,6 +756,11 @@ video {
 
 .h-full {
   height: 100%;
+}
+
+.h-min {
+  height: -moz-min-content;
+  height: min-content;
 }
 
 .h-screen {
@@ -1165,6 +1178,10 @@ img {
   overflow-y: auto;
   /* Adiciona a barra de rolagem vertical quando necessário */
 }
+
+/*
+Icon eye password
+*/
 
 .placeholder\:pl-3::-moz-placeholder {
   padding-left: 0.75rem;
