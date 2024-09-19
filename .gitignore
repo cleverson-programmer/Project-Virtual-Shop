@@ -3,4 +3,5 @@ js/register.js
 js/logOut.js
 js/resetPassword.js
 js/verifyAccount.js
+js/renderProducts.js
 node_modules

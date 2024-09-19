@@ -1,8 +1,14 @@
 const userIcon = document.getElementById("user-icon");
 const containerAccount = document.getElementById("containerAccount")
 const closeAccount = document.getElementById('close-account')
-
 const menuCart = document.querySelector("#buy-cart")
+
+const menuContainer = document.getElementById('menuContainer')
+
+const contentSize = document.querySelector(".contentSize")
+const size = document.querySelector(".addSize")
+
+
 const sendOrderWhatsapp = document.querySelector("#btn-send-whatsapp")
 const showCartBottom = document.querySelector("#show-cart")
 
@@ -43,3 +49,18 @@ closeAccount.addEventListener('click', () =>{
     containerAccount.classList.remove('flex')
     containerAccount.classList.add('hidden')
 })
+
+
+
+
+//View infos product
+
+/*
+iconInfo.addEventListener('click', function() {
+    infoModal.classList.remove('hidden')
+})
+
+closeModal.addEventListener('click', function() {
+    infoModal.classList.add('hidden')
+})
+*/
