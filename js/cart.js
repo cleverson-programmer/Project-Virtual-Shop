@@ -24,39 +24,34 @@ function ready() {
 }
 
 function addProductToCart(event){
-    const button = event.target
-    console.log(button)
+  const button = event.target;
+  //console.log(button)
 
-    const cardProduct = button.parentElement.parentElement.parentElement
-    const productImage = cardProduct.getElementsByClassName("product-image")[0].src
-    console.log(productImage)
-    const nameProduct = cardProduct.getElementsByClassName("name-product")[0].innerText
-    //console.log(nameProduct)
+  const cardProduct = button.parentElement.parentElement.parentElement;
+  const productImage =
+    cardProduct.getElementsByClassName("product-image")[0].src;
+  //console.log(productImage)
+  const nameProduct =
+    cardProduct.getElementsByClassName("name-product")[0].innerText;
+  //console.log(nameProduct)
 
-    //Recuperando o valor de slice e price do localStorage
-    const sliceProduct = localStorage.getItem('selectedSize')
-    console.log(sliceProduct)
+  //console.log(nameProduct.length)
 
-    const selectedPrice = localStorage.getItem('selectedPrice')
-    const priceNumber = parseInt(selectedPrice, 10)
-    if (priceNumber) {
-        console.log(priceNumber);
-        // Aqui você pode usar o valor recuperado conforme necessário
-    }
+  //Recuperando o valor de slice e price do localStorage
+  const sliceProduct = localStorage.getItem("selectedSize");
+  //console.log(sliceProduct)
 
+  const selectedPrice = localStorage.getItem("selectedPrice");
+  const priceNumber = parseInt(selectedPrice, 10);
+  if (priceNumber) {
+    //console.log(priceNumber);
+    // Aqui você pode usar o valor recuperado conforme necessário
+  }
 
-    //Adicionar mais quantidade de itens iguais
-    const productsName = document.querySelector(".name-product")
-    for(var i = 0; i < productsName.length; i++){
-        if(productsName[i].innerText === nameProduct){
-            productsName[i].parentElement.parentElement.getElementsByClassName("amountItems")[0].value++
-        }
-    }
+  //Renderizando na tela o card no carrinho
+  let newProductCart = document.createElement("div");
 
-    //Renderizando na tela o card no carrinho
-    let newProductCart = document.createElement("div")
-
-    newProductCart.innerHTML = `
+  newProductCart.innerHTML = `
         <div class="flex justify-between mb-2 mt-2 p-2 rounded-md flex-col w-full h-36 bg-white" id="cart-items">
                 <div class="flex flex-row justify-between mt-4">
                     <div class="text-xl">
@@ -71,7 +66,7 @@ function addProductToCart(event){
     
                     <div class="flex gap-3">
                         <div class=" flex w-4 h-6 border border-solid border-white rounded-md justify-center text-black">
-                            <input type="number" value="1" min="0" class="amountItem border border-solid border-black rounded-md h-10 w-10 flex justify-center text-center">
+                            <input type="number" value="1" min="0" class="flex amountItem text-black w-10 ml-20">
                         </div>
                     </div>
     
@@ -80,14 +75,13 @@ function addProductToCart(event){
                         <i class="fa-regular fa-trash-can text-red-600"></i>
                     </div>
                 </div>
-            </div>
-    `
-    const containerItems = document.querySelector('.containerCartItems')
-    containerItems.appendChild(newProductCart)
+        </div>
+    `;
+  const containerItems = document.querySelector(".containerCartItems");
+  containerItems.appendChild(newProductCart);
 
-    //Função que atualiza o valor total do carrinho
-    uptadeTotal()
-
+  //Função que atualiza o valor total do carrinho
+  uptadeTotal();
 }
 
 function uptadeTotal(){
