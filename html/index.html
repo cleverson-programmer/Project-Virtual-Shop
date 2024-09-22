@@ -145,50 +145,53 @@
     
             <div class="w-[100%] bg-white h-[1px] flex justify-center"></div>
 
-            <div class="containerCartItems">
-                            <!--Item cart-->
-            <!--
-            <div class="flex justify-between mb-2 mt-2 p-2 rounded-md flex-col w-full h-36 bg-white" id="cart-items">
-                <div class="flex flex-row justify-between mt-4">
-                    <div class="text-xl">
-                        <p class="" id="name-product">Produto</p>
-                        <p class="" id="size-product">Tamanho</p>
-                    </div>
-                    <div>
-                        <img src="../assets/portuguesa.jpg" class="w-16 h-16 rounded-full" alt="">
-                    </div>
-                </div>
-                <div class="flex justify-between items-center">
-                    <p class="" id="amount-produtc">Quant</p>
-    
-                    <div class="flex gap-3 text-white">
-                        <button>
-                            <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <div class=" flex w-4 h-6 border border-solid border-white rounded-md justify-center text-white">
-                            0
-                        </div>
-                        <button>
-                            <i class="fas fa-plus"></i>
-                        </button>
-                    </div>
-    
-                    <div class="flex flex-row w-32 justify-between items-center text-xl">
-                        <p class="" id="price-products">00,00R$</p>
-                        <i class="fa-regular fa-trash-can text-red-600"></i>
-                    </div>
-                </div>
-            </div>
-            -->
-            </div>
-            <div class="w-full h-12 bg-white rounded-md flex justify-between items-center p-2">
-                <div>
-                    <p>Total:</p>
-                </div>
-                <div>
-                    <p>00,00</p>
-                </div>
-            </div>
+            <table class="cart-table">
+                <thead>
+                  <tr>
+                    <th class="table-head-item first-col">Item</th>
+                    <th class="table-head-item second-col">Preço</th>
+                    <th class="table-head-item third-col">Quantidade</th>
+                  </tr>
+                </thead>
+      
+                <tbody>
+                  <!-- <tr class="cart-product">
+                    <td class="product-identification">
+                      <img src="images/produto2.png" alt="Miniatura" class="cart-product-image">
+                      <strong class="cart-product-title">Miniatura</strong>
+                    </td>
+                    <td>
+                      <span class="cart-product-price">R$69,90</span>
+                    </td>
+                    <td>
+                      <input type="number" value="2" min="0" class="product-qtd-input">
+                      <button type="button" class="remove-product-button">Remover</button>
+                    </td>
+                  </tr>
+                  <tr class="cart-product">
+                    <td class="product-identification">
+                      <img src="images/poster3.png" alt="Poster 3" class="cart-product-image">
+                      <strong class="cart-product-title">Poster 3</strong>
+                    </td>
+                    <td>
+                      <span class="cart-product-price">R$19,99</span>
+                    </td>
+                    <td>
+                      <input type="number" value="1" min="0" class="product-qtd-input">
+                      <button type="button" class="remove-product-button">Remover</button>
+                    </td>
+                  </tr> -->
+                </tbody>
+      
+                <tfoot>
+                  <tr>
+                    <td colspan="3" class="cart-total-container">
+                      <strong>Total</strong>
+                      <span>R$0,00</span>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
 
             <form id="formCart" class=" flex flex-col gap-5 mt-5">
     
@@ -210,7 +213,7 @@
                 <div class="flex w-full justify-center mt-6">
                     <button
                         id="btn-send-whatsapp"
-                        class="bg-green-600 text-white p-5 rounded-md text-lg hover:bg-green-800 transition"
+                        class="purchase-button bg-green-600 text-white p-5 rounded-md text-lg hover:bg-green-800 transition"
                         type="submit">Enviar para Whatsapp
                     </button>
                 </div>
