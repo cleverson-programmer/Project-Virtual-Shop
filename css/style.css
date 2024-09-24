@@ -50,3 +50,11 @@ img {
 /*
 Icon eye password
 */
+
+
+/*Seleção de tamanho da pizza*/
+.selected{
+    background-color: rgb(214, 45, 45);
+    transition: 1s;
+    cursor: pointer;
+}
