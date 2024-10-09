@@ -16,15 +16,16 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApps()[0];
 const auth = getAuth(app)
-
 //Logout user account
 function logOut() {
     signOut(auth).then(() => {
         alert('Saindo da conta');
-        window.location.href = 'login.html'
+        localStorage.removeItem('isLoggedIn');
+        window.location.href = '../index.html'
     }).catch((error) => {
         console.error('Erro ao sair da conta:', error);
     });
+    
 }
 
 const btnUser = document.getElementById('btn-user')
@@ -33,3 +34,5 @@ btnUser.addEventListener('click', function(){
     console.log('sucess')
     logOut()
 })
+
+

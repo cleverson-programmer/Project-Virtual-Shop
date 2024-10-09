@@ -30,6 +30,7 @@ img {
 }
 
 
+
 .placeholder-top::placeholder {
     position: absolute;
     top: 0;

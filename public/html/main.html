@@ -8,8 +8,9 @@
     <meta name="robots" content="index, follow">
     <meta name="description" content="Não basta pedir pizza, tem que ser nossa pizza. Pizzaria de Caratinga, Ubaporanga e região">
 
+    <link rel="manifest" href="../manifest.json">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="shortcut icon" href="../assets/logotype1.jpg" type="image/x-icon">
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,13 +24,15 @@
         <!--RESOURCES Firebase-->
         <script type="module" src="../js/script.js" defer></script>
         <script type="module" src="../js/renderProducts.js" defer></script>
-        <script type="module" src="../js/cart.js" defer></script>
-        <script type="module" src="../js/register.js"></script>
-        <script type="module" src="../js/login.js" defer></script>
+        <script type="module" src="../js/writeData.js" defer></script>
+        <script type="module" src="../js/user-location.js" defer></script>
+        <script async type="module" src="../js/finalize-purchase.js" defer></script>
+        
         <script type="module" src="../js/logOut.js" defer></script>
 
-    <title>Document</title>
+    <title>Nossa Pizza</title>
 </head>
+
 <body class="overflow-x-hidden">
 
 <!--Janela modal para escolher tamanho e adicionar ao carrinho-->
@@ -64,16 +67,17 @@
                     </div>
                 </div>
             </div>
-            <div class="flex justify-around mt-6">
-                <div class="pizzaInfo--addButton show-cart bg-green-500 p-4 rounded-md text-white font-bold hover:bg-green-800 transition cursor-pointer">Adicionar ao carrinho</div>
-                <div class="pizzaInfo--cancelButton p-4 rounded-md font-bold bg-gray-200 hover:bg-gray-300 transition cursor-pointer">Cancelar</div>
+            <div class="flex justify-around items-center mt-6 mb-10 sm: text-sm">
+                <div class="pizzaInfo--addButton bg-green-500 p-4 rounded-md text-white font-bold sm: text-sm hover:bg-green-800 transition cursor-pointer">Adicionar ao carrinho</div>
+                <div class="pizzaInfo--addHalf bg-green-500 p-4 rounded-md text-white font-bold sm: text-sm hover:bg-green-800 transition cursor-pointer">Adicionar meia</div>
             </div>
+            <div class="pizzaInfo--cancelButton text-center p-4 rounded-md font-bold bg-gray-200 hover:bg-gray-300 transition cursor-pointer">Cancelar/Sair</div>
         </div>
     </div>
 </div>
 
 <!--Cada card de produto renderizado no menu-->
-<div class="containerCartItems cart">
+<div class="containerCartItems">
     
     <!--Items to card render -->
     <div class="models hidden">
@@ -99,51 +103,12 @@
 
                 <div class=" content-btn-plus flex justify-center mb-2">
                     <div class="addToCart flex justify-center items-center bg-red-600 w-16 h-16 rounded-full hover:bg-red-700 transition delay-100"">
-                <button class=" flex" type="submit">
+                        <button class=" flex" type="submit">
                         <i class="fa-solid fa-plus text-white text-lg text-center"></i>
                         </button>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-
-<!--Cada item que vai ser adicionado ao carrinho-->
-<div class="cart--item flex justify-between mb-2 mt-2 p-2 rounded-md flex-col w-full h-36 bg-white">
-    <div class="flex flex-row justify-between mt-4">
-        <div class="text-xl">
-            <p class="cart--item-nome"></p>
-            <p class="cart--item--qt"></p>
-        </div>
-        <div>
-            <img src="" class="w-16 h-16 rounded-full" alt="">
-        </div>
-    </div>
-    <div class="flex justify-between items-center">
-        <p class="" id="amount-produtc"></p>
-
-        <div class="flex gap-3 text-white">
-            <button class="cart--item-qtmenos">
-                <i class="fa-solid fa-minus"></i>
-            </button>
-            <div
-                class=" flex w-4 h-6 border border-solid border-white rounded-md justify-center text-white">
-                0
-            </div>
-            <button class="cart--item-qtmais">
-                <i class="fas fa-plus"></i>
-            </button>
-        </div>
-
-        <div class="flex flex-row w-32 justify-between items-center text-xl">
-            <p class="" id="price-products"></p>
-            <div class="cart--item--qtarea flex">
-                <button class="cart--item-qtmenos">-</button>
-                <div class="cart--item--qt">1</div>
-                <button class="cart--item-qtmais">+</button>
-            </div>
-            <i class="fa-regular fa-trash-can text-red-600"></i>
         </div>
     </div>
 </div>
@@ -175,18 +140,50 @@
     
         <!--Account div-->
     
-        <div class="hidden absolute top-0 right-0 w-10/12 h-screen p-4 bg-white z-20" id="containerAccount"
-            style="border: 1px solid red;">
+        <div class="hidden absolute top-0 right-0 w-10/12 h-screen p-4 bg-white z-20 transition-all duration-500 ease-in-out transform translate-x-full" id="containerAccount">
             <div class="flex flex-col w-full">
-                <div class="flex relative justify-between h-min w-full text-2xl items-center"
-                    style="border: 1px solid green;">
+                <div class="flex relative justify-between h-min w-full text-2xl items-center">
                     <p>Minha conta</p>
-                    <i class="fa-solid fa-xmark hover:cursor-pointer" id="close-account"></i>
+                    <i class="fa-solid fa-xmark text-red-600 hover:cursor-pointer" id="close-account"></i>
                 </div>
-                <p id="userEmail" class="mt-5 h-min flex justify-center text-lg"></p>
+                <!--<p id="userEmail" class="mt-5 h-min flex justify-center text-lg"></p>-->
 
-                <button class="h-min mt-10 text-xl" id="btn-user" type="submit"
-                    style="border: 1px solid blue;">LogOut</button>
+                <form id="formCart" class=" flex flex-col gap-2 mt-2">
+    
+                    <label class="text-black text-xl" for="name">Nome:</label>
+                    <input class="w-full h-12 p-2 rounded-md border border-gray-700" type="text" name="name" id="name" placeholder="Nome(completo):" required>
+        
+                    <label class="text-black text-xl" for="contact">Contato:</label>
+                    <input class="w-full h-12 p-2 rounded-md border border-gray-700" name="contact" type="tel" id="contact" placeholder="Telefone:" required>
+                    <p class="text-red-500 hidden" id="address-warn">Digite seu endereço completo!</p>
+        
+                    <label class="text-black text-xl" for="address">Endereço:</label>
+                    
+                    <!--Implementar apenas se quiser usar API do Google Maps 5$ por 1000 acessos-->
+
+                    <!--<button class="user-location text-black text-xl">Usar localização atual?</button>-->
+                    
+                    <input class="w-full h-16 p-2 rounded-md placeholder-top align-top border border-gray-700" type="text" id="address" name="address"
+                        placeholder="Endereço(completo):" required>
+        
+                    <div class="flex w-full justify-center mt-2">
+                        <button id="btn-send-data-user"
+                            class="purchase-button bg-green-600 text-white p-4 rounded-md text-lg hover:bg-green-800 transition"
+                            type="submit">Salvar | Editar
+                        </button>
+                    </div>
+                </form>
+
+                <!--Dados do usuario que foram salvos no bd-->
+                <div class="flex flex-col w-full mt-10 break-normal">
+                    <p class="w-full font-bold text-sm mb-2">NOME:<span class="username text-sm font-medium ml-3 "></span></p>
+                    <p class="w-full font-bold text-sm mb-2">EMAIL:<span class="emailuser text-sm font-medium ml-3 break-words"></span></p>
+                    <p class="w-full font-bold text-sm  mb-2">CONTATO:<span class="usercontact text-sm font-medium ml-3 "></span></p>
+                    <p class="w-full font-bold text-sm mb-2">ENDEREÇO:<span class="useradress text-sm font-medium ml-3 "></span></p>
+                </div>
+
+                <button class="h-min mt-10 pb-3 pt-3 rounded-lg text-xl bg-red-500 text-white" id="btn-user" type="submit">LogOut
+                </button>
             </div>
         </div>
     
@@ -214,13 +211,17 @@
             <i class="fa-solid fa-arrow-down text-3xl" id="arrow-down"></i>
         </div>
     
-        <div class="absolute bottom-0 right-0 flex flex-col text-6xl mb-10 w-fit h-48">
+        <div class="absolute bottom-0 right-0 flex flex-col text-4xl mb-10 w-fit h-48">
             <div>
                 <div class="p-4">
-                    <i class="fa-brands fa-instagram text-custom-black hover: cursor-pointer"></i>
+                    <a href="https://www.instagram.com/cleverson_priv/" target="_blank" rel="noopener noreferrer" >
+                        <i class="fa-brands fa-instagram text-custom-black hover: cursor-pointer" ></i>
+                    </a>
                 </div>
                 <div class="p-4">
-                    <i class="fa-brands fa-whatsapp text-custom-black hover: cursor-pointer"></i>
+                    <a href="https://wa.me/3399373400?text=Olá, gostaria de pedir uma pizza por aqui!" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-whatsapp text-custom-black hover: cursor-pointer"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -240,9 +241,7 @@
 
         </div>
     
-        <div class=" text-2xl font-semibold mb-3 mt-3 text-white flex justify-center md:text-3xl">
-            <p>Bebidas</p>
-        </div>
+        
         
         <div class="cardsContainerDrinks grid grid-cols-1 md:grid-cols-2 lg:md:grid-cols-3 mx-auto max-w-7xl">
             
@@ -251,73 +250,67 @@
 
     </div>
     </div>
-    
-    <!--Shopping Cart-->
-    
-    <div class="bg-black/60 w-full hidden buy-cart ">
-        <div class="bg-menu bg-contain bg-center h-full p-5 min-w-[100%] fixed top-0 right-0 z-[99] scrollable-div ">
-            <div class="flex justify-between items-center text-white text-2xl">
-                <h2 class="text-center font-bold mb-2 ">Meu carrinho</h2>
-                <i class="fa-solid fa-xmark hover:cursor-pointer" id="close-cart-button"></i>
-            </div>
-    
-            <div class="w-[100%] bg-white h-[1px] flex justify-center"></div>
 
-            <!--Dentro dessa div renderiza os itens adicionados ao carrinho-->
-            <div class="cart-add">
-
+    <!-- modelos de pizza no carrinho -->
+    <div class="models hidden">
+        <!-- pizza no carrinho -->
+        <div class="cart--item flex items-center justify-between">
+            <img src="" class="w-16 h-16 rounded-full " />
+            <div class="cart--item-nome text-xl font-bold"></div>
+            <div class="cart--item--qtarea text-2xl flex items-center w-24 bg-gray-200 rounded-md">
+                <button class="cart--item-qtmenos w-10 h-10 ">-</button>
+                <div class="cart--item--qt w-10 h-10 text-center">1</div>
+                <button class="cart--item-qtmais w-10 h-10">+</button>
             </div>
-            
-             
-            <div class="w-full h-12 bg-white rounded-md flex justify-between items-center p-2">
-                <div>
-                    <p>Total:</p>
-                </div>
-                <div>
-                    <p>00,00</p>
-                </div>
-            </div>
-    
-            <form id="formCart" class=" flex flex-col gap-5 mt-5">
-    
-                <label class="text-white text-xl" for="name">Nome:</label>
-                <input class="w-full h-12 p-2 rounded-md" type="text" name="name" id="name" placeholder="Nome(completo):">
-    
-                <label class="text-white text-xl" for="contact">Contato:</label>
-                <input class="w-full h-12 p-2 rounded-md" name="contact" type="tel" id="contact" placeholder="Telefone:">
-                <p class="text-red-500 hidden" id="address-warn">Digite seu endereço completo!</p>
-    
-                <label class="text-white text-xl" for="address">Endereço:</label>
-                <input class="w-full h-24 p-2 rounded-md placeholder-top align-top" type="text" id="address" name="address"
-                    placeholder="Endereço(completo):">
-    
-                <label class="text-white text-xl" for="observations">Observação:</label>
-                <input class="w-full h-36 p-2 rounded-md placeholder-top align-top" type="text" id="observations"
-                    name="observations" placeholder="Observações:">
-    
-                <div class="flex w-full justify-center mt-6">
-                    <button id="btn-send-whatsapp"
-                        class="purchase-button bg-green-600 text-white p-5 rounded-md text-lg hover:bg-green-800 transition"
-                        type="submit">Enviar para Whatsapp
-                    </button>
-                </div>
-            </form>
-    
         </div>
     </div>
+
+    <!--Shopping Cart-->
+        <aside class="buy-cart hidden h-screen w-full bg-white">
+            <div class="cart--area p-4 w-full">
+                <div class="flex justify-between mb-6 mt-6 text-2xl font-bold items-center">
+                    <h1>CARRINHO</h1>
+                    <div id="close-cart-button" class="menu-closer hover:cursor-pointer">❌</div>
+                </div>
+                <div class="cart justify-between"></div>
+                <div class="cart--details">
+                    <div class="cart--totalitem subtotal flex justify-between font-bold text-2xl mt-10">
+                        <span>Total:</span>
+                        <span class="text-gray-400">R$ --</span>
+                    </div>
+                    <!--
+                        Se quiser implementar desconto futuramente
+                    -->
+        
+                    <!--
+                     <div class="cart--totalitem desconto">
+                        <span>Desconto</span>
+                        <span>R$ --</span>
+                    </div>
+                    <div class="cart--totalitem total big">
+                        <span>Total</span>
+                        <span>R$ --</span>
+                    </div>
+    
+                    -->
+                    <div class="finish-button mt-10 bg-green-500 pb-3 pt-3 text-center text-white rounded-md hover:bg-green-700 transition-all cursor-pointer">Finalizar a compra</div>
+                </div>
+            </div>
+        </aside>
+
     
     <!--Div to give a space between the btn cart and the last card-->
-    <div class="pb-10">
+    <div class="pb-12">
     
     </div>
     <!--Button show cart-->
     
-    <div id="contentBtnShowCart" class="bg-red-600  text-white flex justify-center fixed bottom-0 w-full">
-        <button class="p-4 show-cart-main menu-openner">
-            (<span id="cart-count"></span>)Ver carrinho
+    <div id="contentBtnShowCart" class="bg-red-600 mt-6 z-[90] text-white flex justify-center fixed bottom-0 w-full">
+        <button class="p-4 show-cart menu-openner">
+            (<span id="cart-count">0</span>)Ver carrinho
             <i class="fa-solid fa-cart-shopping"></i>
         </button>
     </div>
-    </div>
-    </body>
+</div>
+</body>
 </html>

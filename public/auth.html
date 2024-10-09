@@ -10,28 +10,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/logotype1.jpg" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
 
     <!--Tailwindcss-->
-    <link rel="stylesheet" href="../css/output.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./css/output.css">
+    <link rel="stylesheet" href="./css/style.css">
 
-  <script type="module" src="../js/register.js" defer></script>
+  <script type="module" src="./js/register.js" defer></script>
+  <script type="module" src="./js/login-google.js" defer></script>
+  <script type="module" src="./js/login-facebook.js" defer></script>
 
-
-  <title>Document</title>
+  <title>Nossa Pizza</title>
 </head>
 
 <body class="">
     <main id="createAccount" class="bg-custom-yellow flex flex-col items-center justify-center h-screen">
 
       <div id="loading" class="absolute inset-0 hidden justify-center items-center">
-        <img src="../assets/loading.gif" alt="Loading gif">
+        <img src="./assets/loading.gif" alt="Loading gif">
       </div>
 
       <div id="containerRegister" class= " bg-custom-black w-10/12 h-fit rounded-md text-white p-4">
         <!--Logotype Pizzaria-->
         <div class="flex justify-center mt-3 mb-3">
-          <img src="../assets/logotype1.jpg" class=" w-16 h-16 rounded-full" alt="Logo Nossa Pizza">
+          <img src="./assets/logotype1.jpg" class=" w-16 h-16 rounded-full" alt="Logo Nossa Pizza">
         </div>
         <div class="flex justify-center mb-3">
           <h3 id="authFormTitle" class="text-white text-2xl ">Cadastrar Conta</h3>
@@ -50,9 +53,12 @@
           </form>
 
           <!--Unauthenticated users google-->
+          <div class="flex justify-center text-xl">
+            <p>Acessa diretamente com</p>
+          </div>
           <div class="flex justify-center items-center text-4xl">
-            <i class="fa-brands fa-google p-4 hover:cursor-pointer"></i>
-            <i class="fa-brands fa-facebook p-4 hover:cursor-pointer"></i>
+            <i class="fa-brands fa-google google p-4 hover:cursor-pointer"></i>
+            <i class="fa-brands fa-facebook facebook p-4 hover:cursor-pointer"></i>
           </div>
     
           <!--switch from registration to login-->
@@ -65,6 +71,6 @@
       </div>
     </main>
 
-    <script type="module" src="../js/renderProducts.js" defer></script>
+    <script type="module" src="./js/renderProducts.js" defer></script>
 </body>
 </html>

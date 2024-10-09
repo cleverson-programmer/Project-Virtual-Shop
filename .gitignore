@@ -1,7 +1,2 @@
-js/login.js
-js/register.js
-js/logOut.js
-js/resetPassword.js
-js/verifyAccount.js
-js/renderProducts.js
+.env
 node_modules
