@@ -218,7 +218,43 @@ const addProductToCart = (products) =>{
         showAddProductMain()
         closeCart()
         uptadeToCart(products)
-    })
+    });
+
+    // Evento para adicionar meia pizza
+    selected('.pizzaInfo--addHalf').addEventListener('click', () => {
+      console.log('Adicionando meia pizza ao carrinho');
+      let size = selected('.pizzaInfo--size.selected').getAttribute('data-key');
+      let price = selected('.pizzaInfo--actualPrice').innerHTML.replace('R$&nbsp;', '');
+      let halfIdentify = products[keyAttirbutes].id + '/' + size + '-half';
+
+      // Verificar se já existe outra metade da pizza no carrinho
+      let halfKey = cart.findIndex((item) => {
+          console.log('Comparando halfIdentify:', item.identify, halfIdentify);
+          return item.identify == halfIdentify;
+      });
+
+      if (halfKey > -1) {
+          // Se a outra metade já foi adicionada, aumente a quantidade
+          cart[halfKey].qt += quantProducts;
+      } else {
+          // Caso contrário, adicione a primeira metade
+          let halfPizza = {
+              identify: halfIdentify,
+              name: products[keyAttirbutes].name + ' (meia)',
+              id: products[keyAttirbutes].id,
+              size: size,
+              qt: quantProducts,
+              price: parseFloat(price) / 2 // Meia pizza, metade do preço
+          };
+          cart.push(halfPizza);
+          console.log(cart);
+          console.log('Sub total meia pizza R$ ' + (halfPizza.qt * halfPizza.price).toFixed(2));
+      }
+
+      showAddProductMain();
+      closeCart();
+      uptadeToCart(products);
+    });
     
 }
 
@@ -250,6 +286,7 @@ const uptadeToCart = (products) => {
       // em cada item pegar o subtotal
       subtotal += cart[i].price * cart[i].qt
       console.log(cart[i].price)
+      let halfPizzaPairs = {}; // Para armazenar as metades de pizza
 
 			// fazer o clone, exibir na telas e depois preencher as informacoes
 			let cartItem = selected('.models .cart--item').cloneNode(true)
@@ -262,7 +299,10 @@ const uptadeToCart = (products) => {
       let productName = (cart[i].id > 29) ? productItem.name : `${productItem.name} (${productSizeName})`;
       console.log('name', productName);
 
-      
+        // Verifica se é uma meia pizza
+        if (cart[i].identify.includes('-half')) {
+          productName += ' (meia)';
+        } 
 
 			// preencher as informacoes
 			cartItem.querySelector('img').src = productItem.urlImage
@@ -370,14 +410,78 @@ function closeCart() {
 }
 
 
+
 // Função para exibir os produtos na página
 function displayProducts(products) {
 
+
+  // Função para renderizar os produtos na pesquisa
+  function renderProducts(filteredProducts) {
+    const productList = document.getElementById('productList');
+    productList.innerHTML = ''; // Limpa a lista de produtos
+
+    if (filteredProducts.length === 0) {
+        productList.innerHTML = '<p>Nenhum produto encontrado!</p>';
+        return;
+    }
+
+    filteredProducts.forEach((product)=> {
+        const productUl = document.createElement('ul');
+        productUl.className = 'product-ul';
+        const productLi = document.createElement('li')
+        productLi.innerHTML = `<a href="#" data-name="${product.name}">${product.name}</a>`
+        ;
+        productUl.appendChild(productLi)
+        productList.appendChild(productUl);
+    });
+
+     
+
+  }
+
+  // Função para filtrar os produtos com base no valor de busca
+  function searchProducts(searchValue) {
+    const filteredProducts = products.filter(product =>
+        product.name.toLowerCase().includes(searchValue.toLowerCase())
+    );
+    renderProducts(filteredProducts);
+  }
+
+  // Adiciona um evento de input para pesquisar em tempo real
+  document.getElementById('search').addEventListener('input', function (event) {
+    const searchValue = event.target.value;
+    searchProducts(searchValue);
+  });
+
+  // Ocultar a lista se o input perder o foco
+  document.getElementById('search').addEventListener('blur', function () {
+    const containerList = document.querySelector('.containerList');
+    setTimeout(() => {
+        containerList.classList.add('hidden');
+    }, 200); // Delay para permitir a visualização do clique no item
+  });
+
+  // Mostrar a lista quando estiver pesquisando
+  document.getElementById('search').addEventListener('input', function (event) {
+    const searchValue = event.target.value;
+    searchProducts(searchValue);
+  });
+
+  // Mostrar a lista quando o campo de input receber o foco
+  document.getElementById('search').addEventListener('focus', function () {
+    const containerList = document.querySelector('.containerList');
+    containerList.classList.remove('hidden');
+  });
+
+
+
+  //Logica exibe cards no menu
   const productsContainer = document.querySelector('.cardsContainer');
   productsContainer.innerHTML = '';
 
   products.slice(0, 34).forEach((product, index) => {
 
+    
     // Verifica se o índice é 29 para inserir a div de separação
     if (index === 29) {
       const separatorDiv = document.createElement('div');
@@ -408,8 +512,19 @@ function displayProducts(products) {
         dataItemsModalAddToCart(product, index);
         
         selected('.pizzaInfo--qt').innerHTML = quantProducts;
+
+         // Lógica para remover ou esconder o botão "Adicionar Meia" para bebidas
+         if (index >= 29) {
+          // Remove o botão de "Adicionar Meia" do modal
+          selected('.pizzaInfo--addHalf').style.display = 'none';
+          } else {
+          // Mostra o botão "Adicionar Meia" caso seja uma pizza
+          selected('.pizzaInfo--addHalf').style.display = 'block';
+          }
     });
   });
+
+  
 
   // Função para adicionar ao carrinho
   addProductToCart(products);

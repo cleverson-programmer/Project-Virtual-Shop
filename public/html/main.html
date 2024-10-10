@@ -130,11 +130,25 @@
                 <p class="w-fit text-2xl absolute top-1/3 right-0 font-bold text-custom-black">+ RECHEIO</p>
             </div>
         </div>
-        <div class="flex items-center justify-between ml-3 mr-3 relative z-10">
+        <div class="flex items-center justify-between ml-3 mr-3 mt-2 relative z-20">
             <img src="../assets/logotype1.jpg" alt="Nossa Pizza"
                 class="w-12 h-12 rounded-full shadow-lg hover:scale-110 duration-300 cursor-pointer">
-    
-            <button type="button"><i class="fa-solid fa-circle-user text-2xl hover: cursor-pointer" id="user-icon"></i>
+
+                <div class="search-container w-[100%] items-center flex justify-center relative">
+                    <input type="search" name="search" autocomplete="off" id="search" placeholder="Pesquisar pizzas..." class=" rounded-md w-[90%] outline-none  h-8 p-4 focus:border-[#007BFF]" style="border: 1px solid #ccc;">
+
+                    <div class="containerList z-[1000] flex absolute top-8 left-1/2 transform -translate-x-1/2 shadow-lg h-40 overflow-hidden w-[95%] justify-center">
+
+                        <div id="productList" class="bg-white w-[95%] absolute pl-3">
+            
+                        </div>
+                    </div>
+
+                    <i class="fa-solid fa-magnifying-glass text-xl absolute right-8 pointer-events-none"></i>
+
+                </div>
+
+            <button type="button"><i class="fa-solid fa-circle-user text-4xl hover: cursor-pointer" id="user-icon"></i>
             </button>
         </div>
     
@@ -187,7 +201,7 @@
             </div>
         </div>
     
-        <div class="relative w-full h-10 z-10 flex justify-center">
+        <div class="relative w-full h-10 z-10 flex justify-center mt-8">
             <div id="opening-hours" class="absolute z-10 w-64 bg-main-button rounded-lg flex justify-center">
                 <p class="text-white text-center">
                     Sexta à Dom - 19:00 às 23:00

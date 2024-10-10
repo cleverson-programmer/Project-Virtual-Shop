@@ -64,6 +64,47 @@ finish.addEventListener('click', () => {
         return
     }
 
+    // Verificação de metades de pizza
+    const halfPizzas = cart.filter(item => item.name.includes('(meia)'));
+    const sizeCountSalgadas = {};
+    const sizeCountDoces = {};
+
+    halfPizzas.forEach(halfPizza => {
+
+        // Verifica se a pizza é doce ou salgada com base no ID
+        const isDoce = halfPizza.id > 26; // ID maior que 26 indica que é pizza doce
+
+
+        if (isDoce) {
+            if (!sizeCountDoces[halfPizza.size]) {
+                sizeCountDoces[halfPizza.size] = 0;
+            }
+            sizeCountDoces[halfPizza.size] += halfPizza.qt;
+        } else {
+            if (!sizeCountSalgadas[halfPizza.size]) {
+                sizeCountSalgadas[halfPizza.size] = 0;
+            }
+            sizeCountSalgadas[halfPizza.size] += halfPizza.qt;
+        }
+    });
+
+    // Verifica se todas as meias pizzas salgadas têm pares do mesmo tamanho
+    for (const size in sizeCountSalgadas) {
+        if (sizeCountSalgadas[size] % 2 !== 0) {
+            alert(`Você tem uma quantidade ímpar de meias pizzas salgadas do tamanho ${size}. Por favor, adicione outra metade salgada de mesmo tamanho.`);
+            return;
+        }
+    }
+
+    // Verifica se todas as meias pizzas doces têm pares do mesmo tamanho
+    for (const size in sizeCountDoces) {
+        if (sizeCountDoces[size] % 2 !== 0) {
+            alert(`Você tem uma quantidade ímpar de meias pizzas doces do tamanho ${size}. Por favor, adicione outra metade doce de mesmo tamanho.`);
+            return;
+        }
+    }
+    
+
     // Limpar o array global de produtos antes de adicionar
     userCart = [];
 
