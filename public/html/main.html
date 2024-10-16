@@ -134,20 +134,6 @@
             <img src="../assets/logotype1.jpg" alt="Nossa Pizza"
                 class="w-12 h-12 rounded-full shadow-lg hover:scale-110 duration-300 cursor-pointer">
 
-                <div class="search-container w-[100%] items-center flex justify-center relative">
-                    <input type="search" name="search" autocomplete="off" id="search" placeholder="Pesquisar pizzas..." class=" rounded-md w-[90%] outline-none  h-8 p-4 focus:border-[#007BFF]" style="border: 1px solid #ccc;">
-
-                    <div class="containerList z-[1000] flex absolute top-8 left-1/2 transform -translate-x-1/2 shadow-lg h-40 overflow-hidden w-[95%] justify-center">
-
-                        <div id="productList" class="bg-white w-[95%] absolute pl-3">
-            
-                        </div>
-                    </div>
-
-                    <i class="fa-solid fa-magnifying-glass text-xl absolute right-8 pointer-events-none"></i>
-
-                </div>
-
             <button type="button"><i class="fa-solid fa-circle-user text-4xl hover: cursor-pointer" id="user-icon"></i>
             </button>
         </div>
@@ -201,7 +187,7 @@
             </div>
         </div>
     
-        <div class="relative w-full h-10 z-10 flex justify-center mt-8">
+        <div class="relative w-full h-10 z-10 flex justify-center">
             <div id="opening-hours" class="absolute z-10 w-64 bg-main-button rounded-lg flex justify-center">
                 <p class="text-white text-center">
                     Sexta à Dom - 19:00 às 23:00
@@ -307,6 +293,9 @@
                     </div>
     
                     -->
+                    <div class="mt-8 flex w-max ">
+                        <input id="observations" type="text" class="p-4 w-[100%] h-32 border border-solid border-gray-500" placeholder="Observações:">
+                    </div>
                     <div class="finish-button mt-10 bg-green-500 pb-3 pt-3 text-center text-white rounded-md hover:bg-green-700 transition-all cursor-pointer">Finalizar a compra</div>
                 </div>
             </div>
@@ -325,6 +314,10 @@
             <i class="fa-solid fa-cart-shopping"></i>
         </button>
     </div>
+
+    <button id="backToTop">
+        <i class="fa-solid fa-caret-up"></i>
+    </button>
 </div>
 </body>
 </html>

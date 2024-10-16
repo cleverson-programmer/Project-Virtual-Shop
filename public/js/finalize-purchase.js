@@ -46,15 +46,20 @@ async function finalizePurchase() {
         const phone = "3399373400";
         */
 
+        // Captura o valor atual do campo de observações
+        const observations = document.querySelector('#observations');
+        const text = observations ? observations.value : '';
+        
         // Abrir WhatsApp com dados do usuário e produtos do carrinho
         const cartData = userCart.map(item => `\nNome: ${item.name}, Preço: ${item.price}, Quantidade: ${item.qt}, Tamanho: ${item.size}`).join('\n');
-        window.open(`https://wa.me/3399373400?text=${encodeURIComponent(dataUser)}%0AProdutos:%20${encodeURIComponent(cartData)}`);
+        window.open(`https://wa.me/3399373400?text=${encodeURIComponent(dataUser)}%0AProdutos:%20${encodeURIComponent(cartData)}%0AObservações:%20${encodeURIComponent(text)}`);
 
     } catch (error) {
         console.error("Erro ao finalizar compra:", error);
         alert('Erro ao finalizar compra, verifique seus dados de cadastro')
     }
 }
+
 
 // Evento de clique para finalizar a compra
 finish.addEventListener('click', () => {

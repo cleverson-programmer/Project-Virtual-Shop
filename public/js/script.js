@@ -70,3 +70,26 @@ closeAccount.addEventListener('click', () => {
     }, 500); // Atraso de 500ms correspondente à duração da transição
 });
 
+
+//Logica botão de voltar ao topo
+
+// Selecionar o botão
+const backToTopButton = document.getElementById('backToTop');
+
+// Função para mostrar ou esconder o botão de acordo com o scroll
+window.onscroll = function() {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    backToTopButton.style.display = 'block';
+  } else {
+    backToTopButton.style.display = 'none';
+  }
+};
+
+// Função para rolar a página até o topo ao clicar no botão
+backToTopButton.addEventListener('click', function() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // Rola suavemente
+  });
+});
+

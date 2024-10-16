@@ -3,8 +3,7 @@ import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs
 
 
 
-// TODO: Replace the following with your app's Firebase project configuration
-// See: https://firebase.google.com/docs/web/learn-more#config-object
+
 const firebaseConfig = {
     apiKey: "AIzaSyBC6S1E_B5GIc2tYX6vmYTH3dsQC0pQtxI",
     authDomain: "bdclients-5f740.firebaseapp.com",
@@ -413,67 +412,6 @@ function closeCart() {
 
 // Função para exibir os produtos na página
 function displayProducts(products) {
-
-
-  // Função para renderizar os produtos na pesquisa
-  function renderProducts(filteredProducts) {
-    const productList = document.getElementById('productList');
-    productList.innerHTML = ''; // Limpa a lista de produtos
-
-    if (filteredProducts.length === 0) {
-        productList.innerHTML = '<p>Nenhum produto encontrado!</p>';
-        return;
-    }
-
-    filteredProducts.forEach((product)=> {
-        const productUl = document.createElement('ul');
-        productUl.className = 'product-ul';
-        const productLi = document.createElement('li')
-        productLi.innerHTML = `<a href="#" data-name="${product.name}">${product.name}</a>`
-        ;
-        productUl.appendChild(productLi)
-        productList.appendChild(productUl);
-    });
-
-     
-
-  }
-
-  // Função para filtrar os produtos com base no valor de busca
-  function searchProducts(searchValue) {
-    const filteredProducts = products.filter(product =>
-        product.name.toLowerCase().includes(searchValue.toLowerCase())
-    );
-    renderProducts(filteredProducts);
-  }
-
-  // Adiciona um evento de input para pesquisar em tempo real
-  document.getElementById('search').addEventListener('input', function (event) {
-    const searchValue = event.target.value;
-    searchProducts(searchValue);
-  });
-
-  // Ocultar a lista se o input perder o foco
-  document.getElementById('search').addEventListener('blur', function () {
-    const containerList = document.querySelector('.containerList');
-    setTimeout(() => {
-        containerList.classList.add('hidden');
-    }, 200); // Delay para permitir a visualização do clique no item
-  });
-
-  // Mostrar a lista quando estiver pesquisando
-  document.getElementById('search').addEventListener('input', function (event) {
-    const searchValue = event.target.value;
-    searchProducts(searchValue);
-  });
-
-  // Mostrar a lista quando o campo de input receber o foco
-  document.getElementById('search').addEventListener('focus', function () {
-    const containerList = document.querySelector('.containerList');
-    containerList.classList.remove('hidden');
-  });
-
-
 
   //Logica exibe cards no menu
   const productsContainer = document.querySelector('.cardsContainer');

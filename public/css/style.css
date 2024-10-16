@@ -59,3 +59,25 @@ Icon eye password
     transition: 1s;
     cursor: pointer;
 }
+
+/*Estilo botão voltar ao topo*/
+
+#backToTop {
+    display: none;
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    text-align: center;
+    z-index: 100;
+    background-color: #B91C1C;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    cursor: pointer;
+    border: none;
+}
+
+#backToTop .fa-caret-up{
+    font-size: 1.2rem;
+}
